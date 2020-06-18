@@ -5,6 +5,7 @@ import { Product } from '../interfaces/product.interface';
 import { switchMap } from 'rxjs/operators';
 import {v4 as uuid} from 'uuid';
 import { CartService } from './cart.service';
+import { Router } from '@angular/router';
 
 
 @Injectable({
@@ -14,26 +15,27 @@ export class CheckoutService {
   user: firebase.User;
 
 
-  constructor(private fs: AngularFirestore,private auth: AuthService) { }
+  constructor(public router: Router,private fs: AngularFirestore,private auth: AuthService) { }
 
  
 
-  addToCheckout(product: Product) {
-    
+  addToCheckout(products: any,addinfo) {
+    console.log(products, addinfo);
     let orderId =  uuid();
-    const absProduct = {
-      
-      productId: product.Id,
+    const absProducts = {
       orderId,
-      sellerId: product.sellersId,
-     
+     cartItemId: products.filter((product) => product.Id),
+     sellerId: products.filter((product) => product.sellerId),
    } 
-   console.log(absProduct);
+   console.log(absProducts);
     this.auth.getUserState().pipe(switchMap((user: any) => {
     
-      return this.fs.collection(`orders`).doc(orderId).set({...absProduct, userId: user.uid,product})
+      return this.fs.collection(`orders`).doc(orderId).set({...absProducts, ...addinfo, userId: user.uid})
       
-    })).subscribe()
+    })).subscribe(()  => {
+      alert("Trasnsaction Completed");
+      this.router.navigate(['/'])
+    })
    
 
   }

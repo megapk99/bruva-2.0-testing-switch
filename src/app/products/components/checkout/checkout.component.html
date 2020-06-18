@@ -39,20 +39,20 @@
             </div>
               
           </div>
-          <div class="col-lg-4 col-md-6" *ngFor="let product of products; index as i">
+          <div class="col-lg-4 col-md-6">
               <div class="checkout__order">
                   <h4>Your Order</h4>
                   <div class="checkout__order__products">Products <span>Total</span></div>
-                  <ul>
+                  <ul  *ngFor="let product of products; index as i" >
                       <li>{{ product.name | titlecase}}</li>
                       <li>{{ product.price }}</li>
                       
                   </ul>
-                  <div class="checkout__order__total">Total <span>{{ product.price }}</span></div>
+                  <div class="checkout__order__total">Total <span>{{total }}</span></div>
 
                   
 
-                  <button (click)="addToCheckout(product)" class="btn btn-warning">Proceed Order</button>
+                  <button (click)="pay(total)" class="btn btn-warning">Proceed Order</button>
               </div>
           </div>
       
@@ -60,15 +60,15 @@
  
 </div>
 </div>
-<div class="container mt-5">
+<!-- <div class="container mt-5">
     <h2>Stripe Checkout</h2>
     <div class="row mt-5">
      
       <div class="col-md-4">
-        <button (click)="pay(50)" class="btn btn-info btn-block">Pay</button>
-      </div>    
+        <button (click)="pay(total)" class="btn btn-info btn-block">Pay</button>
+      </div> 
     </div>
     <p class="mt-5">
         Try it out using the test card number <b>4242 4242 4242 4242</b>, a random three-digit CVC number, any expiration date in the future, and a random five-digit U.S. ZIP code.
     </p>
-  </div>
+  </div> -->

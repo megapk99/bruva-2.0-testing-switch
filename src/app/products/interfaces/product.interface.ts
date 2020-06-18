@@ -6,7 +6,7 @@ export interface Product {
     Type?:string,
     Describe?:string,
     Id?:string,
-    sellersId?:string,
+    seller?:string,
     Size?:string[],
     colors?:string[],
     cartId?:string[]

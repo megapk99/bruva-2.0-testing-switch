@@ -4,6 +4,8 @@ import { CheckoutService } from '../../services/checkout.service';
 import { Product } from '../../interfaces/product.interface';
 import { Checkout } from '../../interfaces/checkout.interface';
 
+
+
 @Component({
   selector: 'app-checkout',
   templateUrl: './checkout.component.html',
@@ -13,6 +15,7 @@ export class CheckoutComponent implements OnInit {
   products: Product []= []
  user: firebase.User;
  customers: any;
+ total:number; 
   customerName: string;
   customerAddress: string;
   customerMobile: number;
@@ -20,12 +23,14 @@ export class CheckoutComponent implements OnInit {
   constructor(private cs: CartService,private ccs:CheckoutService) { }
 
   ngOnInit(): void {
-   
+    this.total=0;
     this.loadStripe();
     this.cs.getProduct().subscribe(querySnapshot => {
       //console.log(querySnapshot.data())
       querySnapshot.forEach(doc => {
-        this.products.push({ ...doc.data(), Id: doc.id })
+        const product=doc.data();
+        this.products.push({...product, Id: doc.id })
+        this.total+=product.price
       });
     });
   }
@@ -41,12 +46,8 @@ pay(amount) {
   var handler = (<any>window).StripeCheckout.configure({
     key: 'pk_test_51Gsw6xLCJ9qpCfOpVWOqZ02Bb3ZNgDAMw4wXAxlXtMS1kjTuYupF3qq8DhqZnVgguh9QvhnRCY89d6D9Nuy7mGNq00DOg1YifB',
     locale: 'auto',
-    token: function (token: any) {
-      // You can access the token ID with `token.id`.
-      // Get the token ID to your server-side code for use.
-      console.log(token)
-      alert('Token Created!!');
-    }
+    token: (token: any) => {this.addToCheckout()}
+
   });
 
   handler.open({
@@ -69,15 +70,18 @@ loadStripe() {
 }
 
 
-  addToCheckout(product: Product) {
+  addToCheckout() {
+   const addinfo= {
+      name: this.customerName,
+  Address : this.customerAddress,
+    City : this.customerCity,
+    Mobile : this.customerMobile
+   
+    }
     
-    product['Name'] = this.customerName;
-    product['Address'] = this.customerAddress;
-    product['City'] = this.customerCity;
-    product['Mobile'] = this.customerMobile;
    
      
-       this.ccs.addToCheckout(product)
+       this.ccs.addToCheckout(this.products,addinfo)
   }
   
 

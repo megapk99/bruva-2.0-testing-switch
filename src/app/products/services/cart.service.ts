@@ -24,7 +24,7 @@ export class CartService {
   // }
   addToCart(product: Product){
     const itemId =  uuid();
-
+console.log(product)
     const absProduct = {
        itemId,
        colors: product.colors,
@@ -32,8 +32,8 @@ export class CartService {
        name: product.name,
        price: product.Price,
        productId: product.Id,
+       sellerId: product.seller,
     } 
-    console.log(absProduct);
     
     this.auth.getUserState().pipe(
       switchMap((user: any) => {

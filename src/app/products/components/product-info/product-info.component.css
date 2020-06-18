@@ -1,0 +1,26 @@
+.container{
+    margin-top:100px;
+}
+.new{
+    background-color: green;
+    width:50px;
+    color:#fff;
+    font-size:12px;
+    font-weight: bold;
+}
+.price{
+    color:#FE980F;
+    font-size:26px;
+    font-weight: bold;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+}
+input{
+    border:1px solid #ccc;
+    height: 30px;
+    text-align: center;
+    width: 50px;
+    margin-left:5px;
+    margin-right:5px;
+}

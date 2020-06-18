@@ -1,0 +1,47 @@
+<body>
+    <section id="cover">
+        <div class="cover-info">
+            <div class="container">
+                <h1><b>Favorites</b></h1>
+            </div>
+        </div>
+    </section>
+    <div class="container">
+
+        <div class="table-responsive">
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Image</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Price</th>
+                        
+                        <th scope="col">Total</th>
+                        <th scope="col">Options</th>
+                        <th scope="col"></th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let favorite of favorites; index as i">
+                        <td><img [src]="favorite.image1" class="sora">
+                        </td>
+                        <td>{{ favorite.name | titlecase}}</td>
+                        
+                        <td>{{ favorite.Price }}</td>
+                        
+                        
+                        
+
+                        <td> <button class="btn" (click)="delete(favorite.Id)"><i class="remove fa-lg fa fa-trash" aria-hidden="true"></i>
+                        </button>
+                        </td> 
+
+
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</body>

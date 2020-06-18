@@ -1,0 +1,43 @@
+<body>
+    <section id="cover">
+        <div class="cover-info">
+            <div class="container">
+                <h1><b>Checkout</b></h1>
+            </div>
+        </div>
+    </section>
+    <div class="container">
+
+        <div class="table-responsive">
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Image</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Price</th>
+                        
+                        
+                        <th scope="col"></th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let order of orders; index as i">
+                        <td><img [src]="order.image" class="sora">
+                        </td>
+                        <td>{{ order.name | titlecase}}</td>
+                        <td>{{ order.price }}</td>
+                        
+                        
+                       
+                       
+
+
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+           
+    </div>
+</body>

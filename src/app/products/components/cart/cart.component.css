@@ -1,0 +1,58 @@
+body{
+    margin-top:20px;
+    font-weight: normal;
+
+}
+#cover{
+    margin-bottom:30px;
+    margin-top:30px;
+    height: 100px;
+    background-image: url(/assets/cover.jpg);
+    background-size:cover;
+    position:relative;
+    background-attachment: fixed;
+
+}
+#cover .cover-info{
+    position:absolute;
+    background-color:  rgba(91, 63, 156, 0.9);
+    color:#FFF;
+    width:100%;
+    height:100%;
+    background-attachment: fixed;
+
+}
+#cover .cover-info h1{
+    font-weight: 700;
+    font-size:55px;
+    padding-top:30px;
+}
+.sora{
+    height:60px;
+    width:70px;
+}
+.remove {
+    background: none;
+    border: none;
+    height: auto;
+}
+input{
+    font-weight: normal;
+    text-align: center;
+    background: rgb(36, 35, 35);
+    color: white;
+    font-size: 20px;
+    height: 25px;
+    margin: 16px 0;
+    border: 0px;
+    border-radius: 4px;
+}
+.remove:hover {
+    color: #CB4335;
+}
+h1{
+    font-size: 3em;
+
+    font-weight: normal;
+
+}

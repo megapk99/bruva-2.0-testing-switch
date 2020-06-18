@@ -1,0 +1,130 @@
+#cover{
+    margin-top:30px;
+    margin-bottom:30px;
+    height: 100px;
+    background-image: url(/assets/cover.jpg);
+    background-size:cover;
+    position:relative;
+    background-attachment: fixed;
+
+}
+#cover .cover-info{
+    position:absolute;
+    background-color:  rgba(91, 63, 156, 0.9);
+    color:#FFF;
+    width:100%;
+    height:100%;
+    background-attachment: fixed;
+
+}
+#cover .cover-info h1{
+    font-weight: 700;
+    font-size:55px;
+    padding-top:30px;
+}
+
+.checkout__form h4{
+    font-weight: 700;
+    border-bottom: 1px solid #e1e1e1;
+    font-size:20px;
+    padding-bottom: 20px;
+    margin-bottom: 25px;
+}
+.checkout__form p {
+    column-rule: #b2b2b2;
+    
+
+}
+.checkout__input {
+    margin-bottom: 24px;
+
+}
+.checkout__input p {
+    margin-bottom: 20px;
+}
+.checkout__input span{
+    color: #dd2222;
+
+}
+
+input{
+    width: 100%;
+    height: 46px;
+    border: 1px solid ;
+    padding-left: 20px;
+    font-size: 16px;
+    color: #b2b2b2;
+    border-radius: 4px;
+}
+.checkout__input__add{
+    margin-bottom:20px;
+}
+::placeholder{
+    color: #b2b2b2;
+
+}
+
+
+.checkout__order{
+    padding:40px;
+    padding-top:30px;
+    background-color: #f7f7f7;
+}
+h4{
+    font-weight: 700;
+    border-bottom: 1px solid #e1e1e1;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+.checkout__order__products {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+.checkout__order__products span{
+    float:right;
+}
+.checkout__order__products  ul{
+    margin-bottom:12px;
+
+}
+ li{
+    font-size: 16px;
+    line-height: 40px;
+    list-style: none;
+}
+li span{
+    font-weight: 700;
+    float: right;
+}
+
+.checkout__order__subtotal {
+    font-size: 18px;
+    font-weight: 700;
+    border-bottom: 1px solid #e1e1e1;
+    border-top: 1px solid #e1e1e1;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    padding-top: 15px;
+}
+.checkout__order__subtotal span {
+    float:right;
+}
+
+.checkout__order__total {
+    font-size: 18px;
+    font-weight: 700;
+    border-bottom: 1px solid #e1e1e1;
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+}
+.checkout__order__total span{
+    float: right;
+    color: #ebcd21;
+}
+.checkout__order button{
+        font-size: 18px;
+        letter-spacing: 2px;
+        width: 100%;
+        margin-top: 10px;
+}

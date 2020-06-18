@@ -1,0 +1,79 @@
+<section id="cover">
+  <div class="cover-info">
+      <div class="container">
+          <h1><b>Checkout</b></h1>
+      </div>
+  </div>
+</section>
+<div class="container">
+<div class="checkout__form">
+  <h4>Billing Details</h4>
+  <form action="#">
+      <div class="row">
+          <div class="col-lg-8 col-md-6">
+              <div class="row">
+                  <div class="col-lg-6">
+                      <div class="checkout__input">
+                          <p>Name<span>*</span></p>
+                          <input type="text" class="form-control" [(ngModel)]="customerName" name="customerName" placeholder="Name">
+                      </div>
+                  </div>
+                  <div class="col-lg-6">
+                      <div class="checkout__input">
+                          <p>Address<span>*</span></p>
+                          <input type="text" class="form-control" [(ngModel)]="customerAddress" name="customerAddress" placeholder="Address">
+                      </div>
+                  </div>
+              </div>
+              <div class="checkout__input">
+                  <p>City<span>*</span></p>
+                  <input type="text" class="form-control" [(ngModel)]="customerCity" name="customerCity" placeholder="City">
+              </div>
+              <div class="checkout__input">
+                  <p>Mobile<span>*</span></p>
+                  <input type="text" class="form-control" [(ngModel)]="customerMobile" name="customerMobile" placeholder="Mobile">
+              </div>
+              
+              <!-- <button type="button" (click)="CreateRecord()"  class="btn btn-warning">+
+                Submit User Info</button> -->
+            </div>
+              
+          </div>
+          <div class="col-lg-4 col-md-6" *ngFor="let product of products; index as i">
+              <div class="checkout__order">
+                  <h4>Your Order</h4>
+                  <div class="checkout__order__products">Products <span>Total</span></div>
+                  <ul>
+                      <li>{{ product.name | titlecase}}</li>
+                      <li>{{ product.price }}</li>
+                      
+                  </ul>
+                  <div class="checkout__order__total">Total <span>{{ product.price }}</span></div>
+
+                  
+
+                  <button (click)="addToCheckout(product)" class="btn btn-warning">Proceed Order</button>
+              </div>
+          </div>
+      
+  </form>
+ 
+</div>
+</div>
+<div class="container mt-5">
+    <h2>Stripe Checkout</h2>
+    <div class="row mt-5">
+      <div class="col-md-4">
+        <button (click)="pay(20)" class="btn btn-primary btn-block">Pay $20</button>
+      </div>
+      <div class="col-md-4">
+        <button (click)="pay(30)" class="btn btn-success btn-block">Pay $30</button>
+      </div>
+      <div class="col-md-4">
+        <button (click)="pay(50)" class="btn btn-info btn-block">Pay $50</button>
+      </div>    
+    </div>
+    <p class="mt-5">
+        Try it out using the test card number <b>4242 4242 4242 4242</b>, a random three-digit CVC number, any expiration date in the future, and a random five-digit U.S. ZIP code.
+    </p>
+  </div>

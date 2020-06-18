@@ -1,0 +1,45 @@
+body{
+  text-align: center;
+background:url(https://img.freepik.com/free-photo/3d-wooden-table-against-defocussed-sunny-room-interior_1048-10411.jpg?size=626&ext=jpg);
+background-size: cover;
+
+
+}
+form {
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+  margin-top: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 0px;
+  padding:30px;
+ 
+  background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url('https://pro2-bar-s3-cdn-cf6.myportfolio.com/c387f1e20da1b75ea57cae47d919119c/76241638-6cbc-471a-bb70-f4787367d98c_rw_1200.gif?h=18d7f7e262041a606de91155ab266f7c') center center no-repeat;
+  background-size: 100% 100%;
+  width: 100%;
+    height:550px;
+}
+
+a.zorar{
+color:#fff;
+}
+.p{
+text-shadow: 0px 0px 2px #fff;
+font-weight: normal;
+color: #fff;
+
+
+}
+
+.box{
+margin-top:100px}
+
+
+.A{
+margin-top:10px!important;
+text-shadow: 0px 0px 2px #fff;
+color: #fff;
+letter-spacing: 5px;
+
+}
+.alert-danger{
+  margin-top: 50px;
+}

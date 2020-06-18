@@ -1,0 +1,38 @@
+
+<div *ngIf="product">
+
+
+
+<div class="container">
+    <div class= "row">
+        <div class="col-md-5">
+            <img [src]="product.image1" class="w-75" >
+
+        </div>
+        <div class="col-md-7">
+            <p class="new text-center">NEW</p>
+            <h2 class="">{{ product.Describe | titlecase }}</h2>
+            <h4 class="">{{ product.name | titlecase }}</h4>
+            
+            
+            <h6 class="price"><span> USD</span>{{ product.Price | currency }}</h6>
+
+
+
+            <h6 class=""><b>Type: </b>{{ product.Type | titlecase }}</h6>
+            <p><b>Availability: </b>In Stock</p>
+            <label><b>Color:</b> {{product.colors }} <input type="text"  [(ngModel)]="productColor" name="productColor" placeholder="Enter Preffered Color"> </label>
+            
+            <button class="btn btn-danger btn-md btn-bg-color  " (click)="addToCart(product)" type=""><i class="fa fa-cart-plus" aria-hidden="true"></i>
+                
+                Add To Cart</button>
+
+                <button class="btn btn-danger btn-md btn-bg-color  " (click)="addToFavorites(product)" > <i class="fa fa-heart" aria-hidden="true"></i>
+                      </button>
+        </div>
+    </div>
+</div>
+
+</div>
+
+

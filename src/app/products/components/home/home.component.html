@@ -1,0 +1,50 @@
+<div class="body">
+  <section id="cover">
+    <div class="cover-info">
+      <div class="cover-content">
+        <div class="container">
+          <h1>Welcome to BRUVA</h1>
+          <h3>The Next Egyptian Shopfront</h3>
+          <a (click)="ToProducts()" class="button">SHOP NOW »</a>
+
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+
+  <section id="products">
+    <div class="container ">
+      <div class="row ">
+        <div class="col-lg-3 col-md-6 col-xs-6" *ngFor="let product of products; index as i">
+          <div class="card shadow p- rounded" style="width: 14rem;">
+            <a [routerLink]="['/products/product-info', product.Id]"> <img [src]="product.image1"
+                class="card-img-top"></a>
+            <div class="card-body text-center">
+              <h5 class="card-title">{{ product.name | titlecase }}</h5>
+              <p class="card-text">{{ product.Price | currency }}</p>
+
+              <div class="btn btn-group d-flex">
+                <button class="ac flex-fill btn btn-warning" (click)="addToCart(i)"><i class="fa fa-cart-plus"
+                    aria-hidden="true"></i> Add to cart</button>
+                <button class="felex-fill btn " style="background-color: #212529;" (click)="addToFavorites(i)"> <i
+                    class="fa fa-heart" aria-hidden="true"></i>
+                </button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+  <div class="fix">
+    <i class="fa fa-android" aria-hidden="true"></i>
+    <i class="fa fa-apple" aria-hidden="true"></i>
+
+
+  </div>
+</div>

@@ -1,0 +1,31 @@
+.navbar-nav{
+    margin-left:auto;
+    letter-spacing: 3px;
+
+}
+.brand_logo{
+    height:50px;
+
+    margin-right:5px;
+    margin-top: 5px;
+}
+.navbar-brand{
+    font-weight:300px;
+    font-size:18px;
+    letter-spacing: 3px;
+
+}
+.navbar-dark .navbar-nav .nav-link {
+    font-weight:normal;
+    color:whitesmoke;
+
+}
+.navbar-dark .navbar-nav .active>.nav-link, .navbar-dark .navbar-nav .nav-link.active, .navbar-dark .navbar-nav .nav-link.show, .navbar-dark .navbar-nav .show>.nav-link{
+    color: #612ff6 !important;
+    font-weight:400;
+
+    border-bottom: solid 2px #512da8;
+}
+.nav-item{
+    padding-right:30px
+}

@@ -1,0 +1,49 @@
+<body>
+    <section id="cover">
+        <div class="cover-info">
+            <div class="container">
+                <h1><b>Checkout</b></h1>
+            </div>
+        </div>
+    </section>
+    <div class="container">
+
+        <div class="table-responsive">
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Image</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Price</th>
+                        <th scope="col" >Amount</th>
+                        <th scope="col">Total</th>
+                        <th scope="col">Options</th>
+                        <th scope="col"></th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let order of orders; index as i">
+                        <td><img [src]="order.image" class="sora">
+                        </td>
+                        <td>{{ order.name | titlecase}}</td>
+                        <td>{{ order.price }}</td>
+                        <td><input type="number" placeholder="Amount" [(ngModel)]="order.amount"></td>
+                        <td>{{ order.amount * order.Price | currency }}
+                        </td>
+                        <td>
+                            <button class="btn btn-danger" (click)="save(i)">Save</button>
+                        </td>
+                        <td> <button class="btn" (click)="delete(order.id)"><i class="remove fa-lg fa fa-trash" aria-hidden="true"></i>
+                        </button>
+                        </td>
+
+
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+            <button class=" btn-lg float-right btn btn-danger" routerLink="/products/checkout">Checkout</button>
+    </div>
+</body>

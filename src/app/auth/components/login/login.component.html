@@ -1,0 +1,53 @@
+<body>
+  <div class="row" *ngIf="authError">
+    <div class="col-12 alert alert-danger text-center text-red font-weight-bold">{{ authError?.message }}</div>
+  </div>
+  <div class="container">
+
+
+
+    <div class="col-xl-5 col-lg-6 col-md-8 col-sm-10 mx-auto text-center form p-2">
+
+
+      <div class="px-2">
+        <form #loginForm="ngForm" (ngSubmit)="login(loginForm)" class="jusify-content-center">
+   
+
+          <h2 class="A">Login</h2>
+          <div class="box">
+            <div class=" form-group">
+
+              <input ngModel #email="ngModel" placeholder="E-Mail" name="email" type="email" class="form-control">
+            </div>
+
+
+            <div class=" form-group">
+              <input ngModel #password="ngModel" placeholder="Password" name="password" type="password"
+                class="form-control">
+            </div>
+          </div>
+
+
+          <div class=" form-group">
+            <button class="btn btn-warning btn-lg btn-bg-color  margin-left" type="submit">Login</button>
+          </div>
+
+          <br>
+          <br><br>
+          <br>
+          <p class="text-white font-weight-bold klma">Dont have an account?</p>
+
+          <a href="/auth/register" class="zorar">Sign up</a>
+
+
+
+
+        </form>
+      </div>
+
+
+    </div>
+
+
+  </div>
+</body>
